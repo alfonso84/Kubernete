@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"creationTimestamp":"2021-09-10T17:59:51Z","finalizers":["service.kubernetes.io/load-balancer-cleanup"],"labels":{"app":"web"},"managedFields":[{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:labels":{".":{},"f:app":{}}},"f:spec":{"f:externalTrafficPolicy":{},"f:ports":{".":{},"k:{\"port\":80,\"protocol\":\"TCP\"}":{".":{},"f:name":{},"f:port":{},"f:protocol":{},"f:targetPort":{}}},"f:selector":{".":{},"f:app":{}},"f:sessionAffinity":{},"f:type":{}}},"manager":"kubectl-create","operation":"Update","time":"2021-09-10T17:59:50Z"},{"apiVersion":"v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:finalizers":{".":{},"v:\"service.kubernetes.io/load-balancer-cleanup\"":{}}},"f:status":{"f:loadBalancer":{"f:ingress":{}}}},"manager":"kube-controller-manager","operation":"Update","time":"2021-09-10T17:59:54Z"}],"name":"web","namespace":"v8xoqe","resourceVersion":"704","selfLink":"/api/v1/namespaces/v8xoqe/services/web","uid":"5170f96f-351f-483c-abd0-be79355ac4fa"},"spec":{"clusterIP":"10.107.22.199","externalTrafficPolicy":"Cluster","ports":[{"name":"80","nodePort":32349,"port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"web"},"sessionAffinity":"None","type":"LoadBalancer"},"status":{"loadBalancer":{"ingress":[{"hostname":"a5170f96f351f483cabd0be79355ac4f-273199810.us-west-2.elb.amazonaws.com","ip":"44.238.242.48"}]}}}
+  creationTimestamp: "2021-09-10T17:59:51Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: web
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":80,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2021-09-10T17:59:50Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"service.kubernetes.io/load-balancer-cleanup": {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-09-10T17:59:54Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2021-09-10T18:22:33Z"
+ - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:externalTrafficPolicy: {}
+      f:status:
+        f:loadBalancer:
+          f:ingress: {}
+    manager: kubectl-edit
+    operation: Update
+    time: "2021-09-10T18:31:14Z"
+  name: web
+  namespace: v8xoqe
+  resourceVersion: "5528"
+  selfLink: /api/v1/namespaces/v8xoqe/services/web
+  uid: 5170f96f-351f-483c-abd0-be79355ac4fa
+spec:
+  clusterIP: 10.107.22.199
+  externalTrafficPolicy: Cluster
+  healthCheckNodePort: 30642
+  ports:
+  - name: "80"
+    nodePort: 32349
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: web
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a5170f96f351f483cabd0be79355ac4f-273199810.us-west-2.elb.amazonaws.com

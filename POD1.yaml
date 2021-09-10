@@ -1,0 +1,195 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-09-10T17:59:51Z"
+  generateName: web-5f5cb4bdcc-
+  labels:
+    app: web
+    pod-template-hash: 5f5cb4bdcc
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:pod-template-hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"b1675567-847e-40fe-b369-5d19eecdecf2"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:containers:
+          k:{"name":"httpd"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":80,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:protocol: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-09-10T17:59:51Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          .: {}
+          k:{"type":"PodScheduled"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+    manager: kube-scheduler
+    operation: Update
+    time: "2021-09-10T18:01:57Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"192.168.84.195"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-09-10T18:02:45Z"
+  name: web-5f5cb4bdcc-g9wns
+  namespace: v8xoqe
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: web-5f5cb4bdcc
+    uid: b1675567-847e-40fe-b369-5d19eecdecf2
+  resourceVersion: "1394"
+  selfLink: /api/v1/namespaces/v8xoqe/pods/web-5f5cb4bdcc-g9wns
+  uid: 7890885b-f0d7-4c8e-916e-8d78f0e04dad
+spec:
+  containers:
+  - image: httpd:2.4.39-alpine
+    imagePullPolicy: IfNotPresent
+    name: httpd
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-8dcxs
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: ip-10-0-11-41.us-west-2.compute.internal
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-8dcxs
+    secret:
+      defaultMode: 420
+      secretName: default-token-8dcxs
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-10T18:02:31Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-10T18:02:45Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-10T18:02:45Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-09-10T18:02:31Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+        - containerID: docker://a8ea902394064334e15b4459bbf011aab91ad6be9eb7bfffc7b83ccb862ba8b0
+    image: httpd:2.4.39-alpine
+    imageID: docker-pullable://httpd@sha256:addd70e4ee83f3bc9a4c1c7c41e37927ba47faf639312fc936df3afad7926f5a
+    lastState: {}
+    name: httpd
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-09-10T18:02:44Z"
+  hostIP: 10.0.11.41
+  phase: Running
+  podIP: 192.168.84.195
+  podIPs:
+  - ip: 192.168.84.195
+  qosClass: BestEffort
+  startTime: "2021-09-10T18:02:31Z"
